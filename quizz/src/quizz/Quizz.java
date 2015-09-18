@@ -1,4 +1,4 @@
-package questions;
+package quizz;
 
 import java.util.*;
 
@@ -6,8 +6,7 @@ public class Quizz {
 
 	public static void main(String[] args) {
 
-		askQuestion();
-
+		askQuestionFromAllChapters();
 	}
 
 	public static List<String> quizzQuestions() {
@@ -110,7 +109,8 @@ public class Quizz {
 
 	}
 
-	public static void askQuestion() {
+	@SuppressWarnings("resource")
+	public static void askQuestionFromAllChapters() {
 
 		int numberOfQuestions = quizzQuestions().size();
 
@@ -129,9 +129,6 @@ public class Quizz {
 				System.out.println("Pfffftt NOOB , type yes/y , don't go all uber tester on my quizz " + "\n"
 						+ "and try out ways to break this program " + "\n" + "*****ITS NOT PREPARED :D***** " + "\n"
 						+ "love you :*");
-
 		}
-
 	}
-
 }
