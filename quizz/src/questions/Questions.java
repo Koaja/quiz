@@ -157,5 +157,105 @@ public class Questions {
 
 		return chapter8;
 	}
+	
+	public static List<String> AllChaptersQuestions() {
+
+		ArrayList<String> allChapters = new ArrayList<>();
+		allChapters.add("What's the purpose of the Application Layer ?");
+		allChapters.add("What's the function of the Presentation Layer ?");
+		allChapters.add("What's the function of the Session Layer ?");
+		allChapters.add("What's the difference between Services and Protocols ?");
+		allChapters.add("Explain the Client/Server Model");
+		allChapters.add("Explain the P2P Networks");
+		allChapters.add("Explain the P2P Applications");
+		allChapters.add("Give examples of Services and their Ports");
+		allChapters.add("How is DNS working ?");
+		allChapters.add("What kind of messages can a Client can send to a Server ?");
+		allChapters.add("Explain the SMPT/POP Protocols");
+		allChapters.add("What are the e-mail server processes ? Explain MTA and MDA");
+		allChapters.add("Explain the FTP Protocol");
+		allChapters.add("Explain the DHCP Protocol");
+		allChapters.add("Explain  the File-Sharing Services & SMB Protocol");
+		allChapters.add("What is  Telnet ? How does it work ?");
+		allChapters.add("What are the functions of the Transport Layer ?");
+		allChapters.add("What are the responsabilities of the Transport Layer ? Explain");
+		allChapters.add("UDP and TCP - What are the differences between them");
+		allChapters.add("How many types of Ports are ? Give examples");
+		allChapters.add("What is a Socket ?");
+		allChapters.add("What makes TCP a reliable protocol ?");
+		allChapters.add("Explain the 3 Way Handshake Method");
+		allChapters.add("TCP Session Termination - Explain the 2 Way Handshake Method");
+		allChapters.add("What is Expectational ACK ?");
+		allChapters.add("Explain the Retransmission Process");
+		allChapters.add("What is Flow Control ?");
+		allChapters.add("Why isnt't UDP a reliable protocol ?");
+		allChapters.add("Explain the process of Reassembly for UDP");
+		allChapters.add("UDP Client processes - What ports do they use ?");
+		allChapters.add("What are the functions of the Network Layer ?");
+		allChapters.add("Explain each function of the Network Layer");
+		allChapters.add("What are the characteristics of IPv4 - Detail them");
+		allChapters.add("How can networks be grouped ?");
+		allChapters.add("Describe the Subnetting process");
+		allChapters.add("What is a Gateway ?");
+		allChapters.add("What are the 3 main features of Routes ?");
+		allChapters.add("What is a Hop ?");
+		allChapters.add("Which address is the Default Route ?");
+		allChapters.add("Types of Routing");
+		allChapters.add("Give examples of Routing Protocols");
+		allChapters.add("Describe the process of forwarding a packet to its destination");
+		allChapters.add("How many parts does an IPv4 address has ?");
+		allChapters.add("Convert and IPv4 address into binary");
+		allChapters.add("What types of communication exist in an IPv4 network? Describe them");
+		allChapters.add("How can a person tell which bits of an address are network bits and which ones are host bits ?");
+		allChapters.add("How can a device tell which bits of an address are network bits and which ones are host bits ?");
+		allChapters.add("Which address is the Broadcast address ?");
+		allChapters.add("What special unicast IPv4 addresses exist ? Describe them");
+		allChapters.add("Explain the Static and Dynamic assigning of addresses ");
+		allChapters.add("ISP Tiers - describe them");
+		allChapters.add("What is AND process and why is it used ?");
+		allChapters.add("How can 2 or more subnets be created ?");
+		allChapters.add("What is Tracert ?");
+		allChapters.add("What is RTT ?");
+		allChapters.add("What is TTL ?");
+		allChapters.add("ICMP messages - Describe them");
+		allChapters.add("What are the functions of Data Link Layer ?");
+		allChapters.add("What could happen with a Frame at router's interface level ?");
+		allChapters.add("What is a node ?");
+		allChapters.add("What does a Frame include ?");
+		allChapters.add("What are the fields of a Frame ?");
+		allChapters.add("How many sublayers does Data Link Layer has ? Describe them");
+		allChapters.add("Explain the MAC methods for Shared Media");
+		allChapters.add("Explain the MAC methods for Non-Shared Media");
+		allChapters.add("What is Full and Half Duplex communications ?");
+		allChapters.add("What are the differeces between Physical and Logical topologies ?");
+		allChapters.add("Explain the P2P, Multiaccess and Rind topologies ");
+		allChapters.add("What are the parts of a Frame ? Explain them");
+		allChapters.add("Give examples of Protocols for Data Link layer ");
+		allChapters.add("Explain the Ethernet protocol for LAN");
+		allChapters.add("Explain the PPP for WAN");
+		allChapters.add("Explain the Wirelss for LAN");
+		allChapters.add("Explain the road of a packet through the Internetwork");
+		allChapters.add("What is the purpose of the Physical Layer ?");
+		allChapters.add("What are the elements of Frames' Delivery ?");
+		allChapters.add("What are the Standards for Physical Layer ?");
+		allChapters.add("What is a Bit Time ?");
+		allChapters.add("How many variations of a signal are ?");
+		allChapters.add("Explain the Nonreturn to Zero method");
+		allChapters.add("Explain the Manchester method");
+		allChapters.add("What is  'code groups' ?");
+		allChapters.add("Which are the 3 data-carrying methods ? Explain each");
+		allChapters.add("Explain the Copper Media - give examples of cables ");
+		allChapters.add("Explain the UTP, Coax, HFC and STP cables");
+		allChapters.add("Explain the Fiber Media");
+		allChapters.add("What are the types of FO cables ?");
+		allChapters.add("Explain the Wirelss Media");
+		allChapters.add("What are the WLAN devices ? ");
+		allChapters.add("What are the media connectors for FO and what issues can be encountered ?");
+
+		Collections.shuffle(allChapters);
+
+		return allChapters;
+
+	}
 
 }

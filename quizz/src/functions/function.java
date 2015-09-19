@@ -53,42 +53,309 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println("Type 'Ready' when you want to start the quizz");
+			System.out.println("Write 'Yes/Y' to start quizz");
 
-			// if(readyQuestionAnswer.toLowerCase().equals("ready"))
-
+			//
 			for (int i = 0; i < Questions.chapter3Questions().size(); i++) {
 
 				String continueQuizz = input.nextLine();
-				if (continueQuizz.toLowerCase().equals("ready")) {
+				int numberOfQuestions = Questions.chapter3Questions().size();
+				// System.out.println(numberOfQuestions);
+				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
 					System.out.println("--------------------");
 					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter3Questions().get(i)); // prin
 																														// question
 					System.out.println("--------------------");
 					System.out.println(" ");
-					System.out.println(" >> Type 'Ready' again if you want another question << ");
+					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
+
+				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					System.out.println(
+							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
+					String breakPauseAnswer = input.nextLine();
+					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+
+						System.out.println("--------------------");
+						System.out.println(
+								"Question No:" + questionNumber++ + " " + Questions.chapter4Questions().get(i)); // prin
+																													// question
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					}
+
+				} else
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+
+				if (i == numberOfQuestions) {
+
+					String quizzIsOver = input.nextLine();
+
+					System.out.println("You have finished the quiz , there are no more questions");
+
 				}
 			}
+
 		} else if (choice == 2) {
+			// ask for input
+			readyQuestionAnswer = input.nextLine();
+
+			// let the user know the chapter he chose
 			System.out.println("You chose Chapter 4");
 			System.out.println("*******************");
-			System.out.println("Type 'Ready' when you want to start the quizz");
+
+			// ask the user if he is ready
+			System.out.println("Write 'Yes/Y' to start quizz");
+
+			//
+			for (int i = 0; i < Questions.chapter4Questions().size(); i++) {
+
+				String continueQuizz = input.nextLine();
+				int numberOfQuestions = Questions.chapter4Questions().size();
+				// System.out.println(numberOfQuestions);
+				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+					System.out.println("--------------------");
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter3Questions().get(i)); // prin
+																														// question
+					System.out.println("--------------------");
+					System.out.println(" ");
+					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
+
+				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					System.out.println(
+							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
+					String breakPauseAnswer = input.nextLine();
+					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+
+						System.out.println("--------------------");
+						System.out.println(
+								"Question No:" + questionNumber++ + " " + Questions.chapter4Questions().get(i)); // prin
+																													// question
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					}
+
+				} else
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+
+				if (i == numberOfQuestions) {
+
+					String quizzIsOver = input.nextLine();
+
+					System.out.println("You have finished the quiz , there are no more questions");
+
+				}
+			}
+
 		} else if (choice == 3) {
+			// ask for input
+			readyQuestionAnswer = input.nextLine();
+
+			// let the user know the chapter he chose
 			System.out.println("You chose Chapter 5");
 			System.out.println("*******************");
-			System.out.println("Type 'Ready' when you want to start the quizz");
+
+			// ask the user if he is ready
+			System.out.println("Write 'Yes/Y' to start quizz");
+
+			//
+			for (int i = 0; i < Questions.chapter5Questions().size(); i++) {
+
+				String continueQuizz = input.nextLine();
+				int numberOfQuestions = Questions.chapter5Questions().size();
+				// System.out.println(numberOfQuestions);
+				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+					System.out.println("--------------------");
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter5Questions().get(i)); // prin
+																														// question
+					System.out.println("--------------------");
+					System.out.println(" ");
+					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
+
+				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					System.out.println(
+							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
+					String breakPauseAnswer = input.nextLine();
+					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+
+						System.out.println("--------------------");
+						System.out.println(
+								"Question No:" + questionNumber++ + " " + Questions.chapter5Questions().get(i)); // prin
+																													// question
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					}
+
+				} else
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+
+				if (i == numberOfQuestions) {
+
+					String quizzIsOver = input.nextLine();
+
+					System.out.println("You have finished the quiz , there are no more questions");
+
+				}
+			}
+
 		} else if (choice == 4) {
+			// ask for input
+			readyQuestionAnswer = input.nextLine();
+
+			// let the user know the chapter he chose
 			System.out.println("You chose Chapter 6");
 			System.out.println("*******************");
-			System.out.println("Type 'Ready' when you want to start the quizz");
+
+			// ask the user if he is ready
+			System.out.println("Write 'Yes/Y' to start quizz");
+
+			//
+			for (int i = 0; i < Questions.chapter6Questions().size(); i++) {
+
+				String continueQuizz = input.nextLine();
+				int numberOfQuestions = Questions.chapter6Questions().size();
+				// System.out.println(numberOfQuestions);
+				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+					System.out.println("--------------------");
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter6Questions().get(i)); // prin
+																														// question
+					System.out.println("--------------------");
+					System.out.println(" ");
+					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
+
+				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					System.out.println(
+							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
+					String breakPauseAnswer = input.nextLine();
+					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+
+						System.out.println("--------------------");
+						System.out.println(
+								"Question No:" + questionNumber++ + " " + Questions.chapter6Questions().get(i)); // prin
+																													// question
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					}
+
+				} else
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+
+				if (i == numberOfQuestions) {
+
+					String quizzIsOver = input.nextLine();
+
+					System.out.println("You have finished the quiz , there are no more questions");
+
+				}
+			}
+
 		} else if (choice == 5) {
+			// ask for input
+			readyQuestionAnswer = input.nextLine();
+
+			// let the user know the chapter he chose
 			System.out.println("You chose Chapter 7");
 			System.out.println("*******************");
-			System.out.println("Type 'Ready' when you want to start the quizz");
+
+			// ask the user if he is ready
+			System.out.println("Write 'Yes/Y' to start quizz");
+
+			//
+			for (int i = 0; i < Questions.chapter7Questions().size(); i++) {
+
+				String continueQuizz = input.nextLine();
+				int numberOfQuestions = Questions.chapter7Questions().size();
+				// System.out.println(numberOfQuestions);
+				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+					System.out.println("--------------------");
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter7Questions().get(i)); // prin
+																														// question
+					System.out.println("--------------------");
+					System.out.println(" ");
+					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
+
+				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					System.out.println(
+							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
+					String breakPauseAnswer = input.nextLine();
+					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+
+						System.out.println("--------------------");
+						System.out.println(
+								"Question No:" + questionNumber++ + " " + Questions.chapter7Questions().get(i)); // prin
+																													// question
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					}
+
+				} else
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+
+				if (i == numberOfQuestions) {
+
+					String quizzIsOver = input.nextLine();
+
+					System.out.println("You have finished the quiz , there are no more questions");
+
+				}
+			}
+
 		} else if (choice == 6) {
+			// ask for input
+			readyQuestionAnswer = input.nextLine();
+
+			// let the user know the chapter he chose
 			System.out.println("You chose Chapter 8");
 			System.out.println("*******************");
-			System.out.println("Type 'Ready' when you want to start the quizz");
+
+			// ask the user if he is ready
+			System.out.println("Write 'Yes/Y' to start quizz");
+
+			//
+			for (int i = 0; i < Questions.chapter8Questions().size(); i++) {
+
+				String continueQuizz = input.nextLine();
+				int numberOfQuestions = Questions.chapter8Questions().size();
+				// System.out.println(numberOfQuestions);
+				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+					System.out.println("--------------------");
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter8Questions().get(i)); // prin
+																														// question
+					System.out.println("--------------------");
+					System.out.println(" ");
+					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
+
+				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					System.out.println(
+							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
+					String breakPauseAnswer = input.nextLine();
+					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+
+						System.out.println("--------------------");
+						System.out.println(
+								"Question No:" + questionNumber++ + " " + Questions.chapter8Questions().get(i)); // prin
+																													// question
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					}
+
+				} else
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+
+				if (i == numberOfQuestions) {
+
+					String quizzIsOver = input.nextLine();
+
+					System.out.println("You have finished the quiz , there are no more questions");
+
+				}
+			}
+
 		} else if (choice == 7) {
 			System.out.println("You chose Chapter 9");
 			System.out.println("Unfortunatelly the Chapter 9 is not ready yet, our noobs are working on it");
@@ -99,9 +366,58 @@ public class function {
 			System.out.println("You chose chapter 11");
 			System.out.println("Unfortunatelly the Chapter 11 is not ready yet, our noobs are working on it");
 		} else if (choice == 0) {
+			// ask for input
+			readyQuestionAnswer = input.nextLine();
+
+			// let the user know the chapter he chose
 			System.out.println("You chose to be quizzed from all chapters");
 			System.out.println("*******************");
-			System.out.println("Type 'Ready' when you want to start the quizz");
+
+			// ask the user if he is ready
+			System.out.println("Write 'Yes/Y' to start quizz");
+
+			//
+			for (int i = 0; i < Questions.AllChaptersQuestions().size(); i++) {
+
+				String continueQuizz = input.nextLine();
+				int numberOfQuestions = Questions.AllChaptersQuestions().size();
+				// System.out.println(numberOfQuestions);
+				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+					System.out.println("--------------------");
+					System.out
+							.println("Question No:" + questionNumber++ + " " + Questions.AllChaptersQuestions().get(i)); // prin
+																															// question
+					System.out.println("--------------------");
+					System.out.println(" ");
+					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
+
+				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					System.out.println(
+							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
+					String breakPauseAnswer = input.nextLine();
+					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+
+						System.out.println("--------------------");
+						System.out.println(
+								"Question No:" + questionNumber++ + " " + Questions.AllChaptersQuestions().get(i)); // prin
+																													// question
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					}
+
+				} else
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+
+				if (i == numberOfQuestions) {
+
+					String quizzIsOver = input.nextLine();
+
+					System.out.println("You have finished the quiz , there are no more questions");
+
+				}
+			}
+
 		}
 
 	}
