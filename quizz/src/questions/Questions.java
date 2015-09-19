@@ -5,8 +5,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class Questions {
+	
+	public Questions(){
+		
+	}
 
 	public static List<String> chapter3Questions() {
+	
 
 		ArrayList<String> chapter3 = new ArrayList<>();
 		chapter3.add("What's the purpose of the Application Layer ?");
