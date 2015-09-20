@@ -55,15 +55,17 @@ public class function {
 			// ask the user if he is ready
 			System.out.println("Write 'Yes/Y' to start quizz");
 
-			//
-			for (int i = 0; i < Questions.chapter3Questions().size(); i++) {
+			int numberOfQuestions = Questions.chapter3Questions().size() + 1;
 
+			// prompt a question each time yes is typed
+			for (int i = 0; i < numberOfQuestions;) {
+				System.out.println(numberOfQuestions);
 				String continueQuizz = input.nextLine();
-				int numberOfQuestions = Questions.chapter3Questions().size();
 				// System.out.println(numberOfQuestions);
 				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+					i++;
 					System.out.println("--------------------");
-					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter3Questions().get(i)); // prin
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter3Questions().get(i)); // print
 																														// question
 					System.out.println("--------------------");
 					System.out.println(" ");
@@ -77,22 +79,25 @@ public class function {
 
 						System.out.println("--------------------");
 						System.out.println(
-								"Question No:" + questionNumber++ + " " + Questions.chapter4Questions().get(i)); // prin
+								"Question No:" + questionNumber++ + " " + Questions.chapter3Questions().get(i)); // print
 																													// question
 						System.out.println("--------------------");
 						System.out.println(" ");
 						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
+					} else {
+
+						System.out.println("Press ready m8");
 					}
 
-				} else
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+				} else {
 
-				if (i == numberOfQuestions) {
+					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+				}
+				if (questionNumber == numberOfQuestions) {
 
 					String quizzIsOver = input.nextLine();
 
 					System.out.println("You have finished the quiz , there are no more questions");
-
 				}
 			}
 
@@ -115,7 +120,7 @@ public class function {
 				// System.out.println(numberOfQuestions);
 				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
 					System.out.println("--------------------");
-					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter3Questions().get(i)); // prin
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter4Questions().get(i)); // prin
 																														// question
 					System.out.println("--------------------");
 					System.out.println(" ");
@@ -280,20 +285,20 @@ public class function {
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
 					System.out.println(
 							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
-					String breakPauseAnswer = input.nextLine();
-					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+				}
+				String breakPauseAnswer = input.nextLine();
+				if (breakPauseAnswer.toLowerCase().equals("ready")) {
 
-						System.out.println("--------------------");
-						System.out.println(
-								"Question No:" + questionNumber++ + " " + Questions.chapter7Questions().get(i)); // prin
-																													// question
-						System.out.println("--------------------");
-						System.out.println(" ");
-						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
-					}
+					System.out.println("--------------------");
+					System.out.println("Question No:" + questionNumber++ + " " + Questions.chapter7Questions().get(i)); // prin
+																														// question
+					System.out.println("--------------------");
+					System.out.println(" ");
+					System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
 
-				} else
+				} else {
 					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
+				}
 
 				if (i == numberOfQuestions) {
 
