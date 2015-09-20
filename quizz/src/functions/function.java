@@ -1,6 +1,5 @@
 package functions;
 
-import java.util.List;
 import java.util.Scanner;
 
 import questions.Questions;
@@ -58,8 +57,8 @@ public class function {
 			int numberOfQuestions = Questions.chapter3Questions().size() + 1;
 
 			// prompt a question each time yes is typed
-			for (int i = 0; i < numberOfQuestions;) {
-				System.out.println(numberOfQuestions);
+			for (int i = -1; i < numberOfQuestions;) {
+
 				String continueQuizz = input.nextLine();
 				// System.out.println(numberOfQuestions);
 				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
@@ -72,10 +71,12 @@ public class function {
 					System.out.println(" >> Ready for NEXT question ? Type Yes/No ! << ");
 
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					
+					
 					System.out.println(
 							"Quizz has been paused. Get some fresh air and when you're ready to resume type 'Ready' ! ");
 					String breakPauseAnswer = input.nextLine();
-					if (breakPauseAnswer.toLowerCase().equals("ready")) {
+					while (breakPauseAnswer.toLowerCase().equals("ready")) {
 
 						System.out.println("--------------------");
 						System.out.println(
@@ -84,18 +85,16 @@ public class function {
 						System.out.println("--------------------");
 						System.out.println(" ");
 						System.out.println(" >> Are you ready for the next question ? Type Yes/No << ");
-					} else {
+						} 
 
 						System.out.println("Press ready m8");
-					}
+					
 
 				} else {
 
 					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N' ");
 				}
 				if (questionNumber == numberOfQuestions) {
-
-					String quizzIsOver = input.nextLine();
 
 					System.out.println("You have finished the quiz , there are no more questions");
 				}

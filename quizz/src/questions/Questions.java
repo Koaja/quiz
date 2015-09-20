@@ -127,7 +127,7 @@ public class Questions {
 		chapter7.add("Explain the Wirelss for LAN");
 		chapter7.add("Explain the road of a packet through the Internetwork");
 
-		Collections.shuffle(chapter7);
+		//Collections.shuffle(chapter7);
 
 		return chapter7;
 	}
