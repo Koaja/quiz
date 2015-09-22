@@ -2,16 +2,16 @@ package questions;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 public class Questions {
-	
-	public Questions(){
-		
+
+	public Questions() {
+
 	}
 
 	public static List<String> chapter3Questions() {
-	
 
 		ArrayList<String> chapter3 = new ArrayList<>();
 		chapter3.add("What's the purpose of the Application Layer ?");
@@ -127,7 +127,7 @@ public class Questions {
 		chapter7.add("Explain the Wirelss for LAN");
 		chapter7.add("Explain the road of a packet through the Internetwork");
 
-		//Collections.shuffle(chapter7);
+		// Collections.shuffle(chapter7);
 
 		return chapter7;
 	}
@@ -157,7 +157,7 @@ public class Questions {
 
 		return chapter8;
 	}
-	
+
 	public static List<String> AllChaptersQuestions() {
 
 		ArrayList<String> allChapters = new ArrayList<>();
@@ -206,8 +206,10 @@ public class Questions {
 		allChapters.add("How many parts does an IPv4 address has ?");
 		allChapters.add("Convert and IPv4 address into binary");
 		allChapters.add("What types of communication exist in an IPv4 network? Describe them");
-		allChapters.add("How can a person tell which bits of an address are network bits and which ones are host bits ?");
-		allChapters.add("How can a device tell which bits of an address are network bits and which ones are host bits ?");
+		allChapters
+				.add("How can a person tell which bits of an address are network bits and which ones are host bits ?");
+		allChapters
+				.add("How can a device tell which bits of an address are network bits and which ones are host bits ?");
 		allChapters.add("Which address is the Broadcast address ?");
 		allChapters.add("What special unicast IPv4 addresses exist ? Describe them");
 		allChapters.add("Explain the Static and Dynamic assigning of addresses ");
