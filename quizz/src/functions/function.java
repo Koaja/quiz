@@ -1,5 +1,6 @@
 package functions;
 
+import java.util.List;
 import java.util.Scanner;
 
 import questions.Questions;
@@ -12,6 +13,7 @@ public class function {
 	static Scanner input = new Scanner(System.in);
 	static String availableChapters[] = { "All Chapters", "Chapter3", "Chapter4", "Chapter5", "Chapter6", "Chapter7",
 			"Chapter8", "Chapter9", "Chapter10", "Chapter11" };
+	static String answers[] = { "yes", "y", "n", "no" };
 
 	public static void listChapters() {
 
@@ -22,22 +24,22 @@ public class function {
 		}
 	}
 
-	public static void userChoice() {
+	public static void userselectedChapter() {
 
-		// int choice ;
 		System.out.println(Strings.greetUser);
 		System.out.println("-------------");
 
 		// show user available chapters
 		System.out.println(Strings.chapterSelection);
 		System.out.println("*******");
+
 		listChapters();
 		// input box
 		System.out.println("Your Chapter of choice is : ");
 
-		int choice = userInput();
+		int selectedChapter = userChaperSelectionInput();
 
-		if (choice == 1) {
+		if (selectedChapter == 1) {
 
 			// ask for input
 			readyQuestionAnswer = input.nextLine();
@@ -49,36 +51,12 @@ public class function {
 			// ask the user if he is ready
 			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = (Questions.chapter3Questions().size());
+			int numberOfQuestions = Questions.chapter3Questions().size();
+			List<String> question = Questions.chapter3Questions();
 
-			for (int i = -1;;) {
+			new QuestionDisplay(numberOfQuestions, question);
 
-				String continueQuizz = input.nextLine();
-
-				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-					i++;
-					System.out.println("--------------------");
-					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter3Questions().get(i));
-					System.out.println("--------------------");
-					System.out.println(" ");
-					System.out.println(Strings.nextQuestion);
-
-				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
-					System.out.println(Strings.quizStopped);
-
-				} else {
-
-					System.out.println(Strings.wrongInput);
-				}
-				if (i + 1 == numberOfQuestions) {
-
-					System.out.println(Strings.quizOver);
-					break;
-				}
-			}
-
-		} else if (choice == 2)
+		} else if (selectedChapter == 2)
 
 		{
 			// ask for input
@@ -92,37 +70,11 @@ public class function {
 			System.out.println(Strings.prepareFirstQuestion);
 
 			int numberOfQuestions = Questions.chapter4Questions().size();
+			List<String> question = Questions.chapter4Questions();
 
-			for (int i = 0;;)
-				// prompt a question each time yes is typed
-				for (String question : Questions.chapter4Questions()) {
+			new QuestionDisplay(numberOfQuestions, question);
 
-					String continueQuizz = input.nextLine();
-
-					if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-
-						System.out.println("--------------------");
-						System.out.println("Question No" + questionNumber++ + ": " + question); // printQuestion
-						System.out.println("--------------------");
-						System.out.println(" ");
-						System.out.println(Strings.nextQuestion);
-
-					} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
-						System.out.println(Strings.quizStopped);
-
-					} else {
-
-						System.out.println(Strings.wrongInput);
-					}
-					if (questionNumber == numberOfQuestions) {
-
-						System.out.println(Strings.quizOver);
-						break;
-					}
-				}
-
-		} else if (choice == 3)
+		} else if (selectedChapter == 3)
 
 		{
 			// ask for input
@@ -135,34 +87,11 @@ public class function {
 			// ask the user if he is ready
 			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = Questions.chapter5Questions().size() + 1;
+			int numberOfQuestions = Questions.chapter5Questions().size();
+			List<String> question = Questions.chapter5Questions();
+			new QuestionDisplay(numberOfQuestions, question);
 
-			// prompt a question each time yes is typed
-			for (int i = -1; i < numberOfQuestions;) {
-
-				String continueQuizz = input.nextLine();
-				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-					i++;
-					System.out.println("--------------------");
-					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter5Questions().get(i)); // printQuestion
-					System.out.println("--------------------");
-					System.out.println(" ");
-					System.out.println(Strings.nextQuestion);
-
-				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
-					System.out.println(Strings.quizStopped);
-				} else {
-
-					System.out.println(Strings.wrongInput);
-				}
-				if (questionNumber == numberOfQuestions) {
-
-					System.out.println(Strings.quizOver);
-				}
-			}
-
-		} else if (choice == 4)
+		} else if (selectedChapter == 4)
 
 		{
 			// ask for input
@@ -175,33 +104,12 @@ public class function {
 			// ask the user if he is ready
 			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = Questions.chapter6Questions().size() + 1;
+			int numberOfQuestions = Questions.chapter6Questions().size();
 
-			// prompt a question each time yes is typed
-			for (int i = -1; i < numberOfQuestions;) {
+			List<String> question = Questions.chapter6Questions();
+			new QuestionDisplay(numberOfQuestions, question);
 
-				String continueQuizz = input.nextLine();
-				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-					i++;
-					System.out.println("--------------------");
-					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter6Questions().get(i)); // printQuestion
-					System.out.println("--------------------");
-					System.out.println(" ");
-					System.out.println(Strings.nextQuestion);
-
-				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
-					System.out.println(Strings.quizStopped);
-				} else {
-
-					System.out.println(Strings.wrongInput);
-				}
-				if (questionNumber == numberOfQuestions) {
-
-					System.out.println(Strings.quizOver);
-				}
-			}
-		} else if (choice == 5)
+		} else if (selectedChapter == 5)
 
 		{
 			// ask for input
@@ -214,34 +122,12 @@ public class function {
 			// ask the user if he is ready
 			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = Questions.chapter7Questions().size() + 1;
+			int numberOfQuestions = Questions.chapter7Questions().size();
 
-			// prompt a question each time yes is typed
-			for (int i = -1; i < numberOfQuestions;) {
+			List<String> question = Questions.chapter7Questions();
+			new QuestionDisplay(numberOfQuestions, question);
 
-				String continueQuizz = input.nextLine();
-				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-					i++;
-					System.out.println("--------------------");
-					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter7Questions().get(i)); // printQuestion
-					System.out.println("--------------------");
-					System.out.println(" ");
-					System.out.println(Strings.nextQuestion);
-
-				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
-					System.out.println(Strings.quizStopped);
-				} else {
-
-					System.out.println(Strings.wrongInput);
-				}
-				if (questionNumber == numberOfQuestions) {
-
-					System.out.println(Strings.quizOver);
-				}
-			}
-
-		} else if (choice == 6)
+		} else if (selectedChapter == 6)
 
 		{
 			// ask for input
@@ -254,95 +140,49 @@ public class function {
 			// ask the user if he is ready
 			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = Questions.chapter8Questions().size() + 1;
+			int numberOfQuestions = Questions.chapter8Questions().size();
 
-			// prompt a question each time yes is typed
-			for (int i = -1; i < numberOfQuestions;) {
+			List<String> question = Questions.chapter8Questions();
+			new QuestionDisplay(numberOfQuestions, question);
 
-				String continueQuizz = input.nextLine();
-				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-					i++;
-					System.out.println("--------------------");
-					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter8Questions().get(i)); // printQuestion
-					System.out.println("--------------------");
-					System.out.println(" ");
-					System.out.println(Strings.nextQuestion);
-
-				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
-					System.out.println(Strings.quizStopped);
-				} else {
-
-					System.out.println(Strings.wrongInput);
-				}
-				if (questionNumber == numberOfQuestions) {
-
-					System.out.println(Strings.quizOver);
-				}
-			}
-
-		} else if (choice == 7)
+		} else if (selectedChapter == 7)
 
 		{
 			System.out.println("You chose Chapter 9");
 			System.out.println("Unfortunatelly the Chapter 9 is not ready yet, our noobs are working on it");
-		} else if (choice == 8)
+		} else if (selectedChapter == 8)
 
 		{
 			System.out.println("You chose Chapter 10");
 			System.out.println("Unfortunatelly the Chapter 10 is not ready yet, our noobs are working on it");
-		} else if (choice == 9)
+		} else if (selectedChapter == 9)
 
 		{
 			System.out.println("You chose chapter 11");
 			System.out.println("Unfortunatelly the Chapter 11 is not ready yet, our noobs are working on it");
-		} else if (choice == 0)
+		} else if (selectedChapter == 0)
 
 		{
 			// ask for input
 			readyQuestionAnswer = input.nextLine();
 
 			// let the user know the chapter he chose
-			System.out.println("You chose all chapters");
+			System.out.println("You chose all Chapters");
 			System.out.println("*******************");
 
 			// ask the user if he is ready
 			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = Questions.AllChaptersQuestions().size() + 1;
+			int numberOfQuestions = Questions.AllChaptersQuestions().size();
 
-			// prompt a question each time yes is typed
-			for (int i = -1; i < numberOfQuestions;) {
-
-				String continueQuizz = input.nextLine();
-				// System.out.println(numberOfQuestions);
-				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-					i++;
-					System.out.println("--------------------");
-					System.out
-							.println("Question No" + questionNumber++ + ": " + Questions.AllChaptersQuestions().get(i));
-					System.out.println("--------------------");
-					System.out.println(" ");
-					System.out.println(Strings.nextQuestion);
-
-				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
-					System.out.println(Strings.quizStopped);
-				} else {
-
-					System.out.println(Strings.wrongInput);
-				}
-				if (questionNumber == numberOfQuestions) {
-
-					System.out.println(Strings.quizOver);
-				}
-			}
+			List<String> question = Questions.AllChaptersQuestions();
+			new QuestionDisplay(numberOfQuestions, question);
 
 		}
 
 	}
 
-	public static int userInput() {
+	public static int userChaperSelectionInput() {
 
 		int userInput;
 
@@ -358,9 +198,10 @@ public class function {
 
 			} else if (userInput < 0) {
 				System.out.print("Please enter a positive number");
-			} else if (userInput >= 10) {
-				System.out.println("Selected Chapter does not exist");
+			} else if (userInput >= availableChapters.length) {
+				System.out.println("Selected Chapter is not available");
 			}
 		}
 	}
+
 }

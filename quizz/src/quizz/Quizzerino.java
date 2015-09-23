@@ -6,8 +6,7 @@ public class Quizzerino {
 
 	public static void main(String[] args) {
 
-		function.userChoice();
-
+		function.userselectedChapter();
 	}
 
 }

@@ -7,9 +7,7 @@ import java.util.List;
 
 public class Questions {
 
-	public Questions() {
-
-	}
+	
 
 	public static List<String> chapter3Questions() {
 
