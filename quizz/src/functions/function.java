@@ -10,11 +10,6 @@ public class function {
 	static int questionNumber = 1;
 	static String readyQuestionAnswer;
 	static Scanner input = new Scanner(System.in);
-	static String greetUser = "Welcome to CISCO CCNA - Quiz";
-	static String chapterSelection = "Please select a Chapter or all to be quizzed from: ";
-	static String prepareFirstQuestion = "Ready for the first question ? Type Yes/Y or No/N if you want to pause the quiz.";
-	static String quizStopped = "Quiz has been stopped. To resume the quiz please type Yes/Y.";
-	static String nextQuestion = "Ready for next question ? Type Yes or No.";
 	static String availableChapters[] = { "All Chapters", "Chapter3", "Chapter4", "Chapter5", "Chapter6", "Chapter7",
 			"Chapter8", "Chapter9", "Chapter10", "Chapter11" };
 
@@ -30,11 +25,11 @@ public class function {
 	public static void userChoice() {
 
 		// int choice ;
-		System.out.println(greetUser);
+		System.out.println(Strings.greetUser);
 		System.out.println("-------------");
 
 		// show user available chapters
-		System.out.println(chapterSelection);
+		System.out.println(Strings.chapterSelection);
 		System.out.println("*******");
 		listChapters();
 		// input box
@@ -52,32 +47,37 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println(prepareFirstQuestion);
+			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = Questions.chapter3Questions().size() + 1;
+			int numberOfQuestions = (Questions.chapter3Questions().size());
 
-			// prompt a question each time yes is typed
-			for (int i = -1; i < numberOfQuestions;) {
+			for (int i = -1;;) {
 
 				String continueQuizz = input.nextLine();
+
 				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
 					i++;
 					System.out.println("--------------------");
 					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter3Questions().get(i)); // printQuestion
+					System.out.println("qn = " + questionNumber);
+					System.out.println("i = " + i);
+
 					System.out.println("--------------------");
 					System.out.println(" ");
-					System.out.println(nextQuestion);
+					System.out.println(Strings.nextQuestion);
 
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
 
-					System.out.println(quizStopped);
+					System.out.println(Strings.quizStopped);
+
 				} else {
 
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N'  ");
+					System.out.println(Strings.wrongInput);
 				}
-				if (questionNumber == numberOfQuestions) {
+				if (i + 1 == numberOfQuestions) {
 
-					System.out.println("You have finished the quiz , there are no more questions");
+					System.out.println(Strings.quizOver);
+					break;
 				}
 			}
 
@@ -92,33 +92,38 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println(prepareFirstQuestion);
+			System.out.println(Strings.prepareFirstQuestion);
 
-			int numberOfQuestions = Questions.chapter4Questions().size() + 1;
-			// prompt a question each time yes is typed
-			for (int i = -1; i < numberOfQuestions;) {
+			int numberOfQuestions = Questions.chapter4Questions().size();
 
-				String continueQuizz = input.nextLine();
-				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
-					i++;
-					System.out.println("--------------------");
-					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter4Questions().get(i)); // printQuestion
-					System.out.println("--------------------");
-					System.out.println(" ");
-					System.out.println(nextQuestion);
+			for (int i = 0;;)
+				// prompt a question each time yes is typed
+				for (String question : Questions.chapter4Questions()) {
 
-				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+					String continueQuizz = input.nextLine();
 
-					System.out.println(quizStopped);
-				} else {
+					if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
 
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N'  ");
+						System.out.println("--------------------");
+						System.out.println("Question No" + questionNumber++ + ": " + question); // printQuestion
+						System.out.println("--------------------");
+						System.out.println(" ");
+						System.out.println(Strings.nextQuestion);
+
+					} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
+
+						System.out.println(Strings.quizStopped);
+
+					} else {
+
+						System.out.println(Strings.wrongInput);
+					}
+					if (questionNumber == numberOfQuestions) {
+
+						System.out.println(Strings.quizOver);
+						break;
+					}
 				}
-				if (questionNumber == numberOfQuestions) {
-
-					System.out.println("You have finished the quiz , there are no more questions");
-				}
-			}
 
 		} else if (choice == 3)
 
@@ -131,7 +136,7 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println(prepareFirstQuestion);
+			System.out.println(Strings.prepareFirstQuestion);
 
 			int numberOfQuestions = Questions.chapter5Questions().size() + 1;
 
@@ -145,18 +150,18 @@ public class function {
 					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter5Questions().get(i)); // printQuestion
 					System.out.println("--------------------");
 					System.out.println(" ");
-					System.out.println(nextQuestion);
+					System.out.println(Strings.nextQuestion);
 
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
 
-					System.out.println(quizStopped);
+					System.out.println(Strings.quizStopped);
 				} else {
 
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N'  ");
+					System.out.println(Strings.wrongInput);
 				}
 				if (questionNumber == numberOfQuestions) {
 
-					System.out.println("You have finished the quiz , there are no more questions");
+					System.out.println(Strings.quizOver);
 				}
 			}
 
@@ -171,7 +176,7 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println(prepareFirstQuestion);
+			System.out.println(Strings.prepareFirstQuestion);
 
 			int numberOfQuestions = Questions.chapter6Questions().size() + 1;
 
@@ -185,18 +190,18 @@ public class function {
 					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter6Questions().get(i)); // printQuestion
 					System.out.println("--------------------");
 					System.out.println(" ");
-					System.out.println(nextQuestion);
+					System.out.println(Strings.nextQuestion);
 
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
 
-					System.out.println(quizStopped);
+					System.out.println(Strings.quizStopped);
 				} else {
 
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N'  ");
+					System.out.println(Strings.wrongInput);
 				}
 				if (questionNumber == numberOfQuestions) {
 
-					System.out.println("You have finished the quiz , there are no more questions");
+					System.out.println(Strings.quizOver);
 				}
 			}
 		} else if (choice == 5)
@@ -210,7 +215,7 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println(prepareFirstQuestion);
+			System.out.println(Strings.prepareFirstQuestion);
 
 			int numberOfQuestions = Questions.chapter7Questions().size() + 1;
 
@@ -224,18 +229,18 @@ public class function {
 					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter7Questions().get(i)); // printQuestion
 					System.out.println("--------------------");
 					System.out.println(" ");
-					System.out.println(nextQuestion);
+					System.out.println(Strings.nextQuestion);
 
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
 
-					System.out.println(quizStopped);
+					System.out.println(Strings.quizStopped);
 				} else {
 
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N'  ");
+					System.out.println(Strings.wrongInput);
 				}
 				if (questionNumber == numberOfQuestions) {
 
-					System.out.println("You have finished the quiz , there are no more questions");
+					System.out.println(Strings.quizOver);
 				}
 			}
 
@@ -250,7 +255,7 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println(prepareFirstQuestion);
+			System.out.println(Strings.prepareFirstQuestion);
 
 			int numberOfQuestions = Questions.chapter8Questions().size() + 1;
 
@@ -264,18 +269,18 @@ public class function {
 					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter8Questions().get(i)); // printQuestion
 					System.out.println("--------------------");
 					System.out.println(" ");
-					System.out.println(nextQuestion);
+					System.out.println(Strings.nextQuestion);
 
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
 
-					System.out.println(quizStopped);
+					System.out.println(Strings.quizStopped);
 				} else {
 
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N'  ");
+					System.out.println(Strings.wrongInput);
 				}
 				if (questionNumber == numberOfQuestions) {
 
-					System.out.println("You have finished the quiz , there are no more questions");
+					System.out.println(Strings.quizOver);
 				}
 			}
 
@@ -305,7 +310,7 @@ public class function {
 			System.out.println("*******************");
 
 			// ask the user if he is ready
-			System.out.println(prepareFirstQuestion);
+			System.out.println(Strings.prepareFirstQuestion);
 
 			int numberOfQuestions = Questions.AllChaptersQuestions().size() + 1;
 
@@ -321,18 +326,18 @@ public class function {
 							.println("Question No" + questionNumber++ + ": " + Questions.AllChaptersQuestions().get(i));
 					System.out.println("--------------------");
 					System.out.println(" ");
-					System.out.println(nextQuestion);
+					System.out.println(Strings.nextQuestion);
 
 				} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
 
-					System.out.println(quizStopped);
+					System.out.println(Strings.quizStopped);
 				} else {
 
-					System.out.println("Wrong input , please type 'Yes/Y' or 'No/N'  ");
+					System.out.println(Strings.wrongInput);
 				}
 				if (questionNumber == numberOfQuestions) {
 
-					System.out.println("You have finished the quiz , there are no more questions");
+					System.out.println(Strings.quizOver);
 				}
 			}
 
@@ -351,11 +356,11 @@ public class function {
 				continue;
 			}
 			userInput = input.nextInt();
-			if (userInput >= 0) {
+			if (userInput >= 0 && userInput <= 9) {
 				return userInput;
-			} else {
-				System.out.print("Please enter a positive number");
-				continue;
+
+			} else if (userInput < 0 || userInput >= 10) {
+				System.out.print("Selected Chapter does not exist");
 			}
 		}
 	}
