@@ -359,8 +359,10 @@ public class function {
 			if (userInput >= 0 && userInput <= 9) {
 				return userInput;
 
-			} else if (userInput < 0 || userInput >= 10) {
-				System.out.print("Selected Chapter does not exist");
+			} else if (userInput < 0) {
+				System.out.print("Please enter a positive number");
+			} else if (userInput >= 10){
+				System.out.println("Selected Chapter does not exist");
 			}
 		}
 	}
