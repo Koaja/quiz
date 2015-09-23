@@ -58,10 +58,7 @@ public class function {
 				if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
 					i++;
 					System.out.println("--------------------");
-					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter3Questions().get(i)); // printQuestion
-					System.out.println("qn = " + questionNumber);
-					System.out.println("i = " + i);
-
+					System.out.println("Question No" + questionNumber++ + ": " + Questions.chapter3Questions().get(i));
 					System.out.println("--------------------");
 					System.out.println(" ");
 					System.out.println(Strings.nextQuestion);
@@ -361,7 +358,7 @@ public class function {
 
 			} else if (userInput < 0) {
 				System.out.print("Please enter a positive number");
-			} else if (userInput >= 10){
+			} else if (userInput >= 10) {
 				System.out.println("Selected Chapter does not exist");
 			}
 		}
