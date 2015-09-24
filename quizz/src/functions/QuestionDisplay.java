@@ -7,6 +7,7 @@ public class QuestionDisplay {
 
 	static String readyQuestionAnswer;
 	static int questionNumber = 1;
+	static String stopQuiz[] = { "q", "quit" };
 	static Scanner input = new Scanner(System.in);
 
 	public static void promptQuestion(int NumberOfQuestions, List<String> listQuestions) {
@@ -25,13 +26,17 @@ public class QuestionDisplay {
 				i++;
 
 			} else if (continueQuiz.toLowerCase().equals("no") || continueQuiz.toLowerCase().equals("n")) {
-				System.out.println(Strings.quizStopped);
-					
+
+				System.out.println(Strings.quizStopped); //pauses the quiz
+			} else if (continueQuiz.equalsIgnoreCase("q") || continueQuiz.equalsIgnoreCase("quit")) {
+				questionNumber = 1; //resets counter back to 1
+				break; //exits current chapter and returns to chapter selection
 			} else {
+
 				System.out.println(Strings.wrongInput);
 			}
 			if (i == NumberOfQuestions) {
-
+				questionNumber = 1; // resets counter back to 1
 				System.out.println(Strings.quizOver);
 				break;
 			}

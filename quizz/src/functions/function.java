@@ -22,6 +22,7 @@ public class function {
 			String displayChapterNumber = chapterNumber++ + "." + chapter;
 			System.out.println(displayChapterNumber);
 		}
+		chapterNumber = 0; // resets the chapters back to 0
 	}
 
 	public static void userselectedChapter() {
@@ -185,7 +186,7 @@ public class function {
 			String continueQuiz = input.nextLine();
 
 			if (continueQuiz.equalsIgnoreCase("yes") || continueQuiz.equalsIgnoreCase("y")) {
-				//continue;
+				// continue;
 			} else
 				System.exit(1);
 
