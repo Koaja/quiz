@@ -30,10 +30,14 @@ public class QuestionDisplay {
 			} else if (continueQuiz.toLowerCase().equals("no") || continueQuiz.toLowerCase().equals("n")) {
 
 				System.out.println(Strings.quizStopped); // pauses the quiz
-			} else if (continueQuiz.toLowerCase().equals("q") || continueQuiz.toLowerCase().equals("quit")) {
-				System.out.println("Chapter skipped , type Yes/y to choose another chapter or QUIT to exit program");
+			} else if (continueQuiz.toLowerCase().equals("quit")) {
+				System.out.println("Program Terminated");
 				questionNumber = 1; // resets counter back to 1
-				break; // exits current chapter and returns to chapter selection
+				System.exit(1); // exits current chapter and returns to chapter
+								// selection
+			} else if (continueQuiz.toLowerCase().equals("return") || continueQuiz.toLowerCase().equals("r")) {
+				System.out.println(Strings.quizSkipped);
+				break;
 			} else {
 
 				System.out.println(Strings.wrongInput);
