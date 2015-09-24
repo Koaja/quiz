@@ -22,15 +22,17 @@ public class QuestionDisplay {
 				System.out.println("Question No" + questionNumber++ + ": " + listQuestions.get(i));
 				System.out.println("--------------------");
 				System.out.println(" ");
+				if(i != NumberOfQuestions - 1){
 				System.out.println(Strings.nextQuestion);
+				}
 				i++;
 
 			} else if (continueQuiz.toLowerCase().equals("no") || continueQuiz.toLowerCase().equals("n")) {
 
-				System.out.println(Strings.quizStopped); //pauses the quiz
+				System.out.println(Strings.quizStopped); // pauses the quiz
 			} else if (continueQuiz.equalsIgnoreCase("q") || continueQuiz.equalsIgnoreCase("quit")) {
-				questionNumber = 1; //resets counter back to 1
-				break; //exits current chapter and returns to chapter selection
+				questionNumber = 1; // resets counter back to 1
+				break; // exits current chapter and returns to chapter selection
 			} else {
 
 				System.out.println(Strings.wrongInput);

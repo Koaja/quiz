@@ -182,14 +182,11 @@ public class function {
 				QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 			}
-			System.out.println("Would you like to start another chapter ? Type Yes/Y");
-			String continueQuiz = input.nextLine();
 
-			if (continueQuiz.equalsIgnoreCase("yes") || continueQuiz.equalsIgnoreCase("y")) {
-				// continue;
-			} else
-				System.exit(1);
-
+			if (!repeatQuiz()) {
+				System.out.println("Program Terminated");
+				break;
+			}
 		}
 
 	}
@@ -216,4 +213,18 @@ public class function {
 		}
 	}
 
+	public static boolean repeatQuiz() {
+
+		String repeat;
+
+		for (;;) {
+			repeat = input.nextLine();
+			if (repeat.equalsIgnoreCase("yes") || repeat.equalsIgnoreCase("y")) {
+				return true;
+			} else if (repeat.equalsIgnoreCase("quit") || repeat.equalsIgnoreCase("q")) {
+				return false;
+			} else
+				System.out.println("Wrong input , please type 'Yes/Y' or 'Quit/Q'");
+		}
+	}
 }
