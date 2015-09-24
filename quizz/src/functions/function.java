@@ -11,6 +11,7 @@ public class function {
 	static int questionNumber = 1;
 	static String readyQuestionAnswer;
 	static Scanner input = new Scanner(System.in);
+	static Scanner input2 = new Scanner(System.in);
 	static String availableChapters[] = { "All Chapters", "Chapter3", "Chapter4", "Chapter5", "Chapter6", "Chapter7",
 			"Chapter8", "Chapter9", "Chapter10", "Chapter11" };
 	static String answers[] = { "yes", "y", "n", "no" };
@@ -30,6 +31,7 @@ public class function {
 		System.out.println(Strings.greetUser);
 		System.out.println("-------------");
 		while (true) {
+
 			// show user available chapters
 			System.out.println(" ");
 			System.out.println(Strings.chapterSelection);
@@ -38,7 +40,6 @@ public class function {
 			listChapters();
 			// input box
 			System.out.println("Your Chapter of choice is : ");
-
 			int selectedChapter = userChaperSelectionInput();
 
 			if (selectedChapter == 1) {
@@ -182,13 +183,12 @@ public class function {
 				QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 			}
-
-			if (!repeatQuiz()) {
+			if (repeatQuiz().equals("QUIT")) {
 				System.out.println("Program Terminated");
 				break;
 			}
-		}
 
+		}
 	}
 
 	public static int userChaperSelectionInput() {
@@ -213,18 +213,18 @@ public class function {
 		}
 	}
 
-	public static boolean repeatQuiz() {
+	public static String repeatQuiz() {
 
 		String repeat;
 
 		for (;;) {
-			repeat = input.nextLine();
-			if (repeat.equalsIgnoreCase("yes") || repeat.equalsIgnoreCase("y")) {
-				return true;
-			} else if (repeat.equalsIgnoreCase("quit") || repeat.equalsIgnoreCase("q")) {
-				return false;
+			repeat = input2.nextLine();
+			if (repeat.toLowerCase().equals("yes") || repeat.toLowerCase().equals("y")) {
+				return repeat;
+			} else if (repeat.equals("QUIT")) {
+				return repeat;
 			} else
-				System.out.println("Wrong input , please type 'Yes/Y' or 'Quit/Q'");
+				System.out.println("Wrong input , please type 'Yes/Y' or 'QUIT'");
 		}
 	}
 }
