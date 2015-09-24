@@ -13,9 +13,9 @@ public class QuestionDisplay {
 
 		for (int i = 0;;) {
 
-			String continueQuizz = input.nextLine();
+			String continueQuiz = input.nextLine();
 
-			if (continueQuizz.toLowerCase().equals("yes") || continueQuizz.toLowerCase().equals("y")) {
+			if (continueQuiz.toLowerCase().equals("yes") || continueQuiz.toLowerCase().equals("y")) {
 
 				System.out.println("--------------------");
 				System.out.println("Question No" + questionNumber++ + ": " + listQuestions.get(i));
@@ -24,12 +24,10 @@ public class QuestionDisplay {
 				System.out.println(Strings.nextQuestion);
 				i++;
 
-			} else if (continueQuizz.toLowerCase().equals("no") || continueQuizz.toLowerCase().equals("n")) {
-
+			} else if (continueQuiz.toLowerCase().equals("no") || continueQuiz.toLowerCase().equals("n")) {
 				System.out.println(Strings.quizStopped);
-
+					
 			} else {
-
 				System.out.println(Strings.wrongInput);
 			}
 			if (i == NumberOfQuestions) {
@@ -38,6 +36,7 @@ public class QuestionDisplay {
 				break;
 			}
 		}
+
 	}
 
 	public static void chapterOfChoice(int chapterNumber) {
