@@ -54,7 +54,7 @@ public class function {
 			int numberOfQuestions = Questions.chapter3Questions().size();
 			List<String> question = Questions.chapter3Questions();
 
-			new QuestionDisplay(numberOfQuestions, question);
+			QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 		} else if (selectedChapter == 2)
 
@@ -72,7 +72,7 @@ public class function {
 			int numberOfQuestions = Questions.chapter4Questions().size();
 			List<String> question = Questions.chapter4Questions();
 
-			new QuestionDisplay(numberOfQuestions, question);
+			QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 		} else if (selectedChapter == 3)
 
@@ -89,8 +89,7 @@ public class function {
 
 			int numberOfQuestions = Questions.chapter5Questions().size();
 			List<String> question = Questions.chapter5Questions();
-			new QuestionDisplay(numberOfQuestions, question);
-
+			QuestionDisplay.promptQuestion(numberOfQuestions, question);
 		} else if (selectedChapter == 4)
 
 		{
@@ -107,7 +106,7 @@ public class function {
 			int numberOfQuestions = Questions.chapter6Questions().size();
 
 			List<String> question = Questions.chapter6Questions();
-			new QuestionDisplay(numberOfQuestions, question);
+			QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 		} else if (selectedChapter == 5)
 
@@ -125,7 +124,8 @@ public class function {
 			int numberOfQuestions = Questions.chapter7Questions().size();
 
 			List<String> question = Questions.chapter7Questions();
-			new QuestionDisplay(numberOfQuestions, question);
+
+			QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 		} else if (selectedChapter == 6)
 
@@ -143,7 +143,7 @@ public class function {
 			int numberOfQuestions = Questions.chapter8Questions().size();
 
 			List<String> question = Questions.chapter8Questions();
-			new QuestionDisplay(numberOfQuestions, question);
+			QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 		} else if (selectedChapter == 7)
 
@@ -176,7 +176,7 @@ public class function {
 			int numberOfQuestions = Questions.AllChaptersQuestions().size();
 
 			List<String> question = Questions.AllChaptersQuestions();
-			new QuestionDisplay(numberOfQuestions, question);
+			QuestionDisplay.promptQuestion(numberOfQuestions, question);
 
 		}
 

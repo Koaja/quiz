@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class QuestionDisplay {
 
 	static String readyQuestionAnswer;
-	int questionNumber = 1;
+	static int questionNumber = 1;
 	static Scanner input = new Scanner(System.in);
 
-	public QuestionDisplay(int NumberOfQuestions, List<String> listQuestions) {
+	public static void promptQuestion(int NumberOfQuestions, List<String> listQuestions) {
 
 		for (int i = 0;;) {
 
