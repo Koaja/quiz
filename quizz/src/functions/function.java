@@ -12,19 +12,6 @@ public class function {
 	static String readyQuestionAnswer;
 	static Scanner input = new Scanner(System.in);
 	static Scanner input2 = new Scanner(System.in);
-	static String availableChapters[] = { "All Chapters", "Chapter3", "Chapter4", "Chapter5", "Chapter6", "Chapter7",
-			"Chapter8", "Chapter9", "Chapter10", "Chapter11" };
-	static String answers[] = { "yes", "y", "n", "no" };
-
-	public static void listChapters() {
-
-		// Chapters are listed one after another
-		for (String chapter : availableChapters) {
-			String displayChapterNumber = chapterNumber++ + "." + chapter;
-			System.out.println(displayChapterNumber);
-		}
-		chapterNumber = 0; // resets the chapters back to 0
-	}
 
 	public static void userselectedChapter() {
 
@@ -37,17 +24,16 @@ public class function {
 			System.out.println(Strings.chapterSelection);
 			System.out.println("*******");
 
-			listChapters();
+			Questions.listChapters();
 			// input box
 			System.out.println("Your Chapter of choice is : ");
-			int selectedChapter = userChaperSelectionInput();
+
+			// stores the chapter from user input
+			int selectedChapter = UserInputValidation.userChaperSelectionInput();
 
 			switch (selectedChapter) {
 
 			case 1:
-
-				// ask for input
-				readyQuestionAnswer = input.nextLine();
 
 				// let the user know the chapter he chose
 				System.out.println("You chose Chapter 3");
@@ -56,16 +42,17 @@ public class function {
 				// ask the user if he is ready
 				System.out.println(Strings.prepareFirstQuestion);
 
-				int numberOfQuestions = Questions.chapter3Questions().size();
-				List<String> question = Questions.chapter3Questions();
+				// number of questions in a chapter
+				int numberOfQuestionsChapter3 = Questions.chapter3Questions().size();
 
-				QuestionDisplay.promptQuestion(numberOfQuestions, question);
+				// all questions stored in a list
+				List<String> questionsChapter3 = Questions.chapter3Questions();
+
+				// displays the questions from selected chapter
+				ShowUserTheQuestions.promptQuestion(numberOfQuestionsChapter3, questionsChapter3);
 				break;
 
 			case 2:
-
-				// ask for input
-				readyQuestionAnswer = input.nextLine();
 
 				// let the user know the chapter he chose
 				System.out.println("You chose Chapter 4");
@@ -74,16 +61,17 @@ public class function {
 				// ask the user if he is ready
 				System.out.println(Strings.prepareFirstQuestion);
 
-				int numberOfQuestions1 = Questions.chapter4Questions().size();
-				List<String> question1 = Questions.chapter4Questions();
+				// number of questions in a chapter
+				int numberOfQuestionsChapter4 = Questions.chapter4Questions().size();
 
-				QuestionDisplay.promptQuestion(numberOfQuestions1, question1);
+				// all questions stored in a list
+				List<String> questionsChapter4 = Questions.chapter4Questions();
+
+				// displays the questions from selected chapter
+				ShowUserTheQuestions.promptQuestion(numberOfQuestionsChapter4, questionsChapter4);
 				break;
 
 			case 3:
-
-				// ask for input
-				readyQuestionAnswer = input.nextLine();
 
 				// let the user know the chapter he chose
 				System.out.println("You chose Chapter 5");
@@ -92,15 +80,17 @@ public class function {
 				// ask the user if he is ready
 				System.out.println(Strings.prepareFirstQuestion);
 
-				int numberOfQuestions2 = Questions.chapter5Questions().size();
-				List<String> question2 = Questions.chapter5Questions();
-				QuestionDisplay.promptQuestion(numberOfQuestions2, question2);
+				// number of questions in a chapter
+				int numberOfQuestionsChapter5 = Questions.chapter5Questions().size();
+
+				// all questions stored in a list
+				List<String> questionChapter5 = Questions.chapter5Questions();
+
+				// displays the questions from selected chapter
+				ShowUserTheQuestions.promptQuestion(numberOfQuestionsChapter5, questionChapter5);
 				break;
 
 			case 4:
-
-				// ask for input
-				readyQuestionAnswer = input.nextLine();
 
 				// let the user know the chapter he chose
 				System.out.println("You chose Chapter 6");
@@ -109,16 +99,17 @@ public class function {
 				// ask the user if he is ready
 				System.out.println(Strings.prepareFirstQuestion);
 
-				int numberOfQuestions3 = Questions.chapter6Questions().size();
+				// number of questions in a chapter
+				int numberOfQuestionsChapter6 = Questions.chapter6Questions().size();
 
-				List<String> question3 = Questions.chapter6Questions();
-				QuestionDisplay.promptQuestion(numberOfQuestions3, question3);
+				// all questions stored in a list
+				List<String> questionsChapter6 = Questions.chapter6Questions();
+
+				// displays the questions from selected chapter
+				ShowUserTheQuestions.promptQuestion(numberOfQuestionsChapter6, questionsChapter6);
 				break;
 
 			case 5:
-
-				// ask for input
-				readyQuestionAnswer = input.nextLine();
 
 				// let the user know the chapter he chose
 				System.out.println("You chose Chapter 7");
@@ -127,18 +118,18 @@ public class function {
 				// ask the user if he is ready
 				System.out.println(Strings.prepareFirstQuestion);
 
-				int numberOfQuestions4 = Questions.chapter7Questions().size();
+				// number of questions in a chapter
+				int numberOfQuestionsChapter7 = Questions.chapter7Questions().size();
 
-				List<String> question4 = Questions.chapter7Questions();
+				// all questions stored in a list
+				List<String> questionChapter7 = Questions.chapter7Questions();
 
-				QuestionDisplay.promptQuestion(numberOfQuestions4, question4);
+				// displays the questions from selected chapter
+				ShowUserTheQuestions.promptQuestion(numberOfQuestionsChapter7, questionChapter7);
 
 				break;
 
 			case 6:
-
-				// ask for input
-				readyQuestionAnswer = input.nextLine();
 
 				// let the user know the chapter he chose
 				System.out.println("You chose Chapter 8");
@@ -147,11 +138,14 @@ public class function {
 				// ask the user if he is ready
 				System.out.println(Strings.prepareFirstQuestion);
 
-				int numberOfQuestions5 = Questions.chapter8Questions().size();
+				// number of questions in a chapter
+				int numberOfQuestionsChapter8 = Questions.chapter8Questions().size();
 
-				List<String> question5 = Questions.chapter8Questions();
+				// all questions stored in a list
+				List<String> questionChapter8 = Questions.chapter8Questions();
 
-				QuestionDisplay.promptQuestion(numberOfQuestions5, question5);
+				// displays the questions from selected chapter
+				ShowUserTheQuestions.promptQuestion(numberOfQuestionsChapter8, questionChapter8);
 
 				break;
 
@@ -175,9 +169,6 @@ public class function {
 
 			case 0:
 
-				// ask for input
-				readyQuestionAnswer = input.nextLine();
-
 				// let the user know the chapter he chose
 				System.out.println("You chose all Chapters");
 				System.out.println("*******************");
@@ -185,14 +176,19 @@ public class function {
 				// ask the user if he is ready
 				System.out.println(Strings.prepareFirstQuestion);
 
-				int numberOfQuestions6 = Questions.AllChaptersQuestions().size();
+				// number of questions in a chapter
+				int numberOfQuestionsAllChapters = Questions.AllChaptersQuestions().size();
 
-				List<String> question6 = Questions.AllChaptersQuestions();
-				QuestionDisplay.promptQuestion(numberOfQuestions6, question6);
+				// all questions stored in a list
+				List<String> questionsAllChapters = Questions.AllChaptersQuestions();
+
+				// displays the questions from selected chapter
+				ShowUserTheQuestions.promptQuestion(numberOfQuestionsAllChapters, questionsAllChapters);
+
 				break;
 			}
 
-			if (repeatQuiz().equals("QUIT")) {
+			if (UserInputValidation.userRepeatQuizInput().toLowerCase().equals("quit")) {
 				System.out.println("Program Terminated");
 				break;
 			}
@@ -200,48 +196,4 @@ public class function {
 		}
 	}
 
-	public static int userChaperSelectionInput() {
-
-		int userInput;
-
-		for (;;) {
-
-			if (!input.hasNextInt()) {
-				System.out.println("Only numbers are allowed , please try again.");
-				input.next(); // discard
-				continue;
-			}
-			userInput = input.nextInt();
-
-			if (userInput >= 0 && userInput <= 9) {
-				return userInput;
-
-			} else if (userInput < 0) {
-
-				System.out.print("Please enter a positive number.");
-			} else if (userInput >= availableChapters.length) {
-
-				System.out.println("Selected Chapter is not available.");
-			}
-		}
-	}
-
-	public static String repeatQuiz() {
-
-		String repeat;
-
-		for (;;) {
-			repeat = input2.nextLine();
-
-			if (repeat.toLowerCase().equals("yes") || repeat.toLowerCase().equals("y")) {
-				return repeat;
-
-			} else if (repeat.toLowerCase().equals("quit")) {
-
-				return repeat;
-			} else
-
-				System.out.println("Wrong input , please type 'Yes/Y' or 'Quit");
-		}
-	}
 }

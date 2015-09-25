@@ -3,7 +3,7 @@ package functions;
 import java.util.List;
 import java.util.Scanner;
 
-public class QuestionDisplay {
+public class ShowUserTheQuestions {
 
 	static String readyQuestionAnswer;
 	static int questionNumber = 1;
@@ -32,18 +32,28 @@ public class QuestionDisplay {
 				System.out.println(Strings.quizStopped); // pauses the quiz
 			} else if (continueQuiz.toLowerCase().equals("quit")) {
 				System.out.println("Program Terminated");
-				questionNumber = 1; // resets counter back to 1
-				System.exit(1); // exits current chapter and returns to chapter
-								// selection
+
+				// resets counter back to 1
+				questionNumber = 1;
+
+				// exits current chapter and returns to main menu
+				System.exit(1);
+
 			} else if (continueQuiz.toLowerCase().equals("return") || continueQuiz.toLowerCase().equals("r")) {
+
 				System.out.println(Strings.quizSkipped);
+
 				break;
 			} else {
 
 				System.out.println(Strings.wrongInput);
 			}
+
 			if (i == NumberOfQuestions) {
-				questionNumber = 1; // resets counter back to 1
+
+				// resets counter back to 1
+				questionNumber = 1;
+
 				System.out.println(Strings.quizOver);
 				break;
 			}
@@ -51,9 +61,4 @@ public class QuestionDisplay {
 
 	}
 
-	public static void chapterOfChoice(int chapterNumber) {
-
-		// ask the user if he is ready
-		System.out.println("You chose: " + function.availableChapters.toString());
-	}
 }

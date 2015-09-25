@@ -5,8 +5,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class Questions {
+	static int chapterNumber;
+	public static String availableChapters[] = { "All Chapters", "Chapter3", "Chapter4", "Chapter5", "Chapter6",
+			"Chapter7", "Chapter8", "Chapter9", "Chapter10", "Chapter11" };
 
-	
+	public static void listChapters() {
+
+		// Chapters are listed one after another
+		for (String chapter : availableChapters) {
+			String displayChapterNumber = chapterNumber++ + "." + chapter;
+			System.out.println(displayChapterNumber);
+		}
+		chapterNumber = 0; // resets the chapters back to 0
+	}
 
 	public static List<String> chapter3Questions() {
 
