@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import functions.Strings;
+
 public class Questions {
 	static int chapterNumber;
 	public static String availableChapters[] = { "All Chapters", "Chapter3", "Chapter4", "Chapter5", "Chapter6",
@@ -16,7 +18,22 @@ public class Questions {
 			String displayChapterNumber = chapterNumber++ + "." + chapter;
 			System.out.println(displayChapterNumber);
 		}
+
+		System.out.println(" ");
+		System.out.println(Strings.chapterSelection);
+		System.out.println("*******");
+
+		// input box
+		System.out.println("Your Chapter of choice is : ");
+
 		chapterNumber = 0; // resets the chapters back to 0
+	}
+	
+	public static void listChapters1(){
+		for (String chapter : availableChapters) {
+			String displayChapterNumber = chapterNumber++ + "." + chapter;
+			System.out.println(displayChapterNumber);
+		}
 	}
 
 	public static List<String> chapter3Questions() {
@@ -165,11 +182,11 @@ public class Questions {
 
 		return chapter8;
 	}
-	
-	public static List<String> chapter9Questions(){
-		
+
+	public static List<String> chapter9Questions() {
+
 		ArrayList<String> chapter9 = new ArrayList<>();
-		
+
 		return chapter9;
 	}
 

@@ -19,16 +19,10 @@ public class Quiz {
 
 		System.out.println(Strings.greetUser);
 		System.out.println("-------------");
+
 		while (true) {
 
-			// show user available chapters
-			System.out.println(" ");
-			System.out.println(Strings.chapterSelection);
-			System.out.println("*******");
-
 			Questions.listChapters();
-			// input box
-			System.out.println("Your Chapter of choice is : ");
 
 			// stores the chapter from user input
 			int selectedChapter = UserInputValidation.userChaperSelectionInput();
@@ -198,4 +192,5 @@ public class Quiz {
 			}
 		}
 	}
+
 }

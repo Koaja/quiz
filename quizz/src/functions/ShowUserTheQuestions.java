@@ -3,6 +3,8 @@ package functions;
 import java.util.List;
 import java.util.Scanner;
 
+import questions.Questions;
+
 public class ShowUserTheQuestions {
 
 	static String readyQuestionAnswer;
@@ -29,20 +31,19 @@ public class ShowUserTheQuestions {
 
 			} else if (continueQuiz.toLowerCase().equals("no") || continueQuiz.toLowerCase().equals("n")) {
 
-				System.out.println(Strings.quizStopped); // pauses the quiz
+				// pauses the quiz
+				System.out.println(Strings.quizStopped);
+
 			} else if (continueQuiz.toLowerCase().equals("quit")) {
 				System.out.println("Program Terminated");
 
-				// resets counter back to 1
-				questionNumber = 1;
-
-				// exits current chapter and returns to main menu
+				// closes program
 				System.exit(1);
 
 			} else if (continueQuiz.toLowerCase().equals("return") || continueQuiz.toLowerCase().equals("r")) {
 
+				// returns user to main menu
 				System.out.println(Strings.quizSkipped);
-
 				break;
 
 			} else {
