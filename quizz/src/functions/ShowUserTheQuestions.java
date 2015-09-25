@@ -44,6 +44,7 @@ public class ShowUserTheQuestions {
 				System.out.println(Strings.quizSkipped);
 
 				break;
+
 			} else {
 
 				System.out.println(Strings.wrongInput);

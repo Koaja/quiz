@@ -165,6 +165,13 @@ public class Questions {
 
 		return chapter8;
 	}
+	
+	public static List<String> chapter9Questions(){
+		
+		ArrayList<String> chapter9 = new ArrayList<>();
+		
+		return chapter9;
+	}
 
 	public static List<String> AllChaptersQuestions() {
 

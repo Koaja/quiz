@@ -7,7 +7,7 @@ import functions.Strings;
 import functions.UserInputValidation;
 import questions.Questions;
 
-public class Quizzerino {
+public class Quiz {
 
 	public static void main(String[] args) {
 
@@ -191,8 +191,8 @@ public class Quizzerino {
 			}
 
 			if (UserInputValidation.userRepeatQuizInput().toLowerCase().equals("quit")) {
-				
-				//exits program
+
+				// exits program
 				System.out.println("Program Terminated");
 				break;
 			}

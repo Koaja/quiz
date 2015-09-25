@@ -158,8 +158,9 @@ public class function {
 			case 8:
 
 				System.out.println("You chose Chapter 10");
-				System.out.println("Unfortunatelly the Chapter 10 is not ready yet, our noobs are working on it.");
-				break;
+				System.out.println(Strings.chapterNotReady);
+				
+				//break;
 
 			case 9:
 
