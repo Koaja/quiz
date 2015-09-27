@@ -3,8 +3,6 @@ package functions;
 import java.util.List;
 import java.util.Scanner;
 
-import questions.Questions;
-
 public class ShowUserTheQuestions {
 
 	static String readyQuestionAnswer;
@@ -60,7 +58,5 @@ public class ShowUserTheQuestions {
 				break;
 			}
 		}
-
 	}
-
 }

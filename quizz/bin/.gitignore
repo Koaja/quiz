@@ -1,6 +1,2 @@
-/answers/
+/.gitignore
 /functions/
-/questions/
-/quizz/
-/chapters/
-/gui/
