@@ -126,8 +126,7 @@ public class FirstDraft {
 
 				System.out.println("Question: " + "*" + quizzQuestions().get(i) + "*");
 			} else
-				System.out.println("Pfffftt NOOB , type yes/y , don't go all uber tester on my quizz " + "\n"
-						+ "and try out ways to break this program " + "\n" + "*****ITS NOT PREPARED :D***** " );
+				System.out.println("test");
 		}
 	}
 }
